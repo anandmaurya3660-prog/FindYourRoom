@@ -1,0 +1,345 @@
+/* Modern Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f7fa;
+    color: #2d3748;
+    padding-bottom: 60px;
+}
+
+/* Glassmorphism Header/Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 18px 8%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+header h2 {
+    background: linear-gradient(135deg, #007BFF, #00C6FF);
+    -webkit-background-clip: text; /* Purane browsers ke liye */
+    background-clip: text;         /* 👈 YEH NAYI LINE ADD KAREIN (Standard property) */
+    -webkit-text-fill-color: transparent;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    cursor: pointer;
+}
+
+nav button {
+    padding: 10px 20px;
+    margin-left: 12px;
+    border: none;
+    background: transparent;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+}
+
+nav button:hover {
+    background: #edf2f7;
+    color: #007BFF;
+}
+
+nav button#navOwnerDash {
+    background: #e1f5fe;
+    color: #0288d1;
+}
+
+/* Stunning Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), 
+                url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Floating Interactive Search Bar */
+.search-container {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 800px;
+}
+
+#searchForm {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#searchForm input {
+    flex: 1;
+    border: none;
+    background: #f7fafc;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    outline: none;
+    color: #4a5568;
+    transition: all 0.3s;
+}
+
+#searchForm input:focus {
+    background: #edf2f7;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Standard Section Wrappers */
+section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background: #007BFF;
+    bottom: -6px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.hidden { display: none !important; }
+
+/* Premium Form Cards (Auth & Dashboard) */
+.form-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1a202c;
+}
+
+.inputs-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.inputs-group input, .inputs-group select, .inputs-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+}
+
+.inputs-group input:focus, .inputs-group select:focus, .inputs-group textarea:focus {
+    outline: none;
+    border-color: #007BFF;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+}
+
+/* Auth Grid Wrapper */
+.auth-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Dynamic Grid Container for Room Cards */
+#roomsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Card Masterpiece Layout */
+.room-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    border: 1px solid #edf2f7;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-img-placeholder {
+    height: 180px;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+}
+
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-content h4 {
+    font-size: 18px;
+    color: #1a202c;
+    font-weight: 600;
+}
+
+.room-rent {
+    font-size: 20px;
+    color: #007BFF;
+    font-weight: 700;
+}
+
+.room-rent span {
+    font-size: 12px;
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+.room-meta {
+    font-size: 13px;
+    color: #718096;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.room-desc {
+    font-size: 14px;
+    color: #4a5568;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+.room-contact {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #edf2f7;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+}
+/* Tabs Styling */
+.auth-card-container {
+    max-width: 450px; /* Card ko chota aur clean banaya */
+    margin: 60px auto;
+}
+
+.auth-tabs {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #a0aec0;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.tab-btn:hover {
+    color: #007BFF;
+}
+
+.tab-btn.active {
+    color: #007BFF;
+}
+
+/* Active tab ke niche blue line lane ke liye */
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #007BFF;
+    border-radius: 2px;
+}

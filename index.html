@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindRoom - Find Your Perfect Stay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h2 onclick="showSection('homeSection')">FindRoom</h2>
+        <nav>
+            <button onclick="showSection('homeSection')">Home</button>
+            <button onclick="showSection('authSection')">Login / Signup</button>
+            <button id="navOwnerDash" class="hidden" onclick="showSection('ownerSection')">Owner Dashboard</button>
+        </nav>
+    </header>
+
+    <main id="homeSection">
+        <div class="hero">
+            <h1>Find a Place to Call Home</h1>
+            <p>Skip the broker, discover direct PG and Rooms near your university.</p>
+            
+            <div class="search-container">
+                <form id="searchForm">
+                    <input type="text" id="searchLocation" placeholder="📍 Enter location or locality...">
+                    <input type="number" id="maxRent" placeholder="💰 Max Budget (₹)">
+                    <button type="submit" class="btn-gradient">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <section>
+            <h3 class="section-title">Available Listings</h3>
+            <div id="roomsContainer">
+                </div>
+        </section>
+    </main>
+
+    <section id="authSection" class="hidden">
+        <div class="form-card auth-card-container">
+            <div class="auth-tabs">
+                <button id="tabLoginBtn" class="tab-btn active" onclick="switchAuthTab('login')">Sign In</button>
+                <button id="tabRegisterBtn" class="tab-btn" onclick="switchAuthTab('register')">Register</button>
+            </div>
+
+            <div id="loginTabForm">
+                <h3>Welcome Back</h3>
+                <form id="loginForm" class="inputs-group">
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="btn-gradient">Sign In</button>
+                </form>
+            </div>
+            
+            <div id="registerTabForm" class="hidden">
+                <h3>Create Account</h3>
+                <form id="registerForm" class="inputs-group">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="password" placeholder="Password" required>
+                    <select id="userRole" required>
+                        <option value="Tenant">I am looking for a Room (Tenant)</option>
+                        <option value="Owner">I want to Rent out a Room (Owner)</option>
+                    </select>
+                    <button type="submit" class="btn-gradient">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="ownerSection" class="hidden">
+        <div class="form-card" style="max-width: 700px;">
+            <h3>List Your Property</h3>
+            <form id="addRoomForm" class="inputs-group">
+                <input type="text" placeholder="Title (e.g., Luxury Single Room with Wi-Fi)" required>
+                <input type="text" placeholder="Locality / Landmark" required>
+                <input type="number" placeholder="Rent Amount per month (₹)" required>
+                <select required>
+                    <option value="Single">Single Room</option>
+                    <option value="Sharing">Sharing PG</option>
+                    <option value="Flat">Full Flat (1BHK/2BHK)</option>
+                </select>
+                <textarea rows="4" placeholder="Mention key facilities (e.g., RO Water, No restrictions, AC, Gym nearby...)"></textarea>
+                <input type="tel" placeholder="Your Mobile Number for Tenants" required>
+                <button type="submit" class="btn-gradient">Publish Property</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
